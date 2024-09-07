@@ -1,8 +1,28 @@
-# Proyecto NOC
+# NOC-Network-Operations-Center
 
-El objetivo es crear una serie de tareas usando Arquitectura Limpia con TypeScript
+## Descripción
 
-# dev
+Este proyecto permite registrar logs en tres fuentes de datos distintas de manera simultánea:
+- Sistema de archivos (FileSystem)
+- Base de datos MongoDB
+- Base de datos PostgreSQL
+
+## Funcionalidades principales:
+
+- Registro de logs: Los logs se almacenan en las tres fuentes de datos mencionadas para garantizar redundancia y facilidad de acceso.
+- Obtención de logs
+- Envío de logs por email: Se incluye la funcionalidad para enviar los archivos de logs por correo electrónico utilizando el servicio de Gmail.
+
+## Tecnologías utilizadas:
+
+- Prisma (PostgreSQL)
+- Mongoose (MongoDB)
+- Nodemailer (Correo)
+- cron (Tareas programadas)
+- TypeScript
+
+## Pasos a seguir
+
 1. Clonar el archivo .env.template a .env
 2. Configurar las variables de entorno
 3. Ejecutar el comando ```npm install```
