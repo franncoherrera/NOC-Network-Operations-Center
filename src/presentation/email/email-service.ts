@@ -1,15 +1,14 @@
 import nodemailer from "nodemailer";
 import { envs } from "../../config/pugings/env.plugins";
-import { LogEntity, LogSeverityLevel } from "../../domain/entities/log.entity";
 
-interface SendMailOptions {
+export interface SendMailOptions {
   to: string | string[];
   subject: string;
   htmlBody: string;
   attachments?: Attachment[];
 }
 
-interface Attachment {
+export interface Attachment {
   fileName: string;
   path: string;
 }
@@ -43,7 +42,7 @@ export class EmailService {
   async sendEmailWithFileSystemLogs(to: string | string[]) {
     const subject = "Logs del servidor";
     const htmlBody = `
-        <h3>Logs de sistema - NOC </h3>
+        <h3>Logs de sistema -NOC </h3>
         <p> Email de logs del sistema.</p>
         <p> Se enviaron como archivos los logs del sistema.</p>
 

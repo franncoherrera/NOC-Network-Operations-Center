@@ -14,14 +14,14 @@ export class SendEmailLogs implements SendLogEmailUseCase {
 
   async execute(to: string | string[]) {
     try {
-      const sent = this.emailService.sendEmailWithFileSystemLogs(to);
+      const sent = await this.emailService.sendEmailWithFileSystemLogs(to);
       if (!sent) {
         throw new Error("Email log not sent");
       }
       const log = new LogEntity({
         message: `Log email sent`,
         level: LogSeverityLevel.low,
-        origin: "send-email-logs",
+        origin: "send-email-logs.ts",
       });
       this.logRepository.saveLog(log);
       return true;
@@ -29,7 +29,7 @@ export class SendEmailLogs implements SendLogEmailUseCase {
       const log = new LogEntity({
         message: `${error}`,
         level: LogSeverityLevel.high,
-        origin: "send-email-logs",
+        origin: "send-email-logs.ts",
       });
       this.logRepository.saveLog(log);
 
