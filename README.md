@@ -21,7 +21,7 @@ Este proyecto permite registrar logs en tres fuentes de datos distintas de maner
 - cron (Tareas programadas)
 - TypeScript
 
-## Pasos a seguir
+## Pasos a seguir para ejecutar el proyecto
 
 1. Clonar el archivo .env.template a .env
 2. Configurar las variables de entorno
@@ -32,6 +32,12 @@ Este proyecto permite registrar logs en tres fuentes de datos distintas de maner
    ```
 5. Ejecutar ```npm run dev```
 
+## Pasos a seguir para ejecutar testing
+
+1.  Configurar las variables de entorno del archivo ```.env.test.template```
+2.  Ejecutar el comando ```npm run test:watch```
+
+Puede llegar a ser necesario darle permisos de administrador a la carpeta /logs que se crea automáticamente o también puede ser necesario crear las bases de datos NOC, NOC-TEST
 
 ## Obtener Gmail Key
 [Google AppPasswords](https://myaccount.google.com/u/0/apppasswords)
